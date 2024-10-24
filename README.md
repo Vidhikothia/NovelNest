@@ -1,7 +1,7 @@
 # 📖NovelNest
 
 ## Overview
-NovelNest is a user-friendly book management application designed to help users organize, manage, and explore their personal book collections. Whether you are a casual reader or an avid bibliophile, NovelNest provides a seamless experience for tracking your books, categorizing them, and sharing them with others.
+NovelNest is a book management system for organizing books, authors, genres, and publishers, offering an intuitive interface with user authentication.
 
 ## Features
 - **Add New Books**: Easily add books to your collection with details like title, author, genre, and publication date.
@@ -21,11 +21,11 @@ NovelNest is a user-friendly book management application designed to help users 
    dotnet restore
    dotnet run
 
-### Contributors
+### 🤝Contributors
 - **Vidhi Kothia** - [Vidhikothia](https://github.com/Vidhikothia)
-- **Talaviya Kruti** - [TalaviyaKruti](https://github.com/TalaviyaKruti)
+- **Kruti Talaviya** - [Kruti Talaviya](https://github.com/Kruti-Talaviya)
 
-### Contact
+### 📫Contact
 For any inquiries or feedback, feel free to reach out:
 
 - **Vidhi Kothia**  
