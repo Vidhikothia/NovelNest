@@ -1,0 +1,63 @@
+﻿@model IEnumerable<BookStore.Models.Domain.Genre>
+@{
+}
+
+<div class="container pt-5">
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <a class="btn btn-primary btn-lg" href="/Genre/Add">Add Genre</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center mb-4">Genres</h3>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>
+                                    <a class="btn btn-success" href="/Genre/Update?id=@item.Id">
+                                      Edit
+                                    </a>
+                                    <a class="btn btn-danger" onclick="return window.confirm('Are you sure?')" href="/Genre/Delete?id=@item.Id">
+                                       Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Additional Custom Styles */
+    .table th, .table td {
+        vertical-align: middle; /* Center content vertically */
+    }
+
+    .btn {
+        margin-right: 10px; /* Space between buttons */
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1; /* Light background on hover */
+    }
+
+    .thead-dark th {
+        background-color: #343a40; /* Dark header background */
+        color: #ffffff; /* White text */
+    }
+</style>

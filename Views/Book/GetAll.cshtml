@@ -1,0 +1,96 @@
+﻿@model IEnumerable<BookStore.Models.Domain.Book>
+@{
+}
+
+<div class="container pt-3">
+    <div class="row">
+        <div class="col-md-12 mb-3">
+            <!-- Added margin bottom for spacing -->
+            <a class="btn btn-primary btn-lg" href="/Book/Add">Add Book</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center mb-4">Books</h3> <!-- Centered the heading and added margin -->
+
+            <table class="table table-striped table-bordered table-hover">
+                <!-- Changed class for hover effect -->
+                <thead class="table-dark">
+                    <tr>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>ISBN</th>
+                        <th>Total Pages</th>
+                        <th>Author</th>
+                        <th>Publisher</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any()) // Check if the model has data
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Title</td>
+                                <td>@item.GenreName</td>
+                                <td>@item.Isbn</td>
+                                <td>@item.TotalPages</td>
+                                <td>@item.AuthorName</td>
+                                <td>@item.PublisherName</td>
+                                <td>
+                                    <a class="btn btn-success" href="/Book/Update?id=@item.Id" title="Edit">Edit</a>
+                                    <a class="btn btn-danger" onclick="return window.confirm('Are you sure?')" href="/Book/Delete?id=@item.Id" title="Delete">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="7" class="text-center">No books found.</td> <!-- Message for no data -->
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Enhanced CSS for better visual appeal */
+    body {
+        background-color: #f8f9fa; /* Light background color for the whole page */
+    }
+
+    h3 {
+        color: #343a40; /* Dark color for the heading */
+    }
+
+    .table {
+        background-color: #ffffff; /* White background for the table */
+        border-radius: 0.5rem; /* Rounded corners for the table */
+        overflow: hidden; /* To ensure rounded corners are applied */
+    }
+
+        .table th {
+            background-color: #343a40; /* Dark background for header */
+            color: #ffffff; /* White text for header */
+        }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f2f2f2; /* Light gray for odd rows */
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #e2e2e2; /* Highlight row on hover */
+    }
+
+    .btn {
+        margin-right: 5px; /* Margin for button spacing */
+    }
+
+    .mb-3 {
+        margin-bottom: 1rem; /* Bottom margin for the "Add more" button */
+    }
+</style>
